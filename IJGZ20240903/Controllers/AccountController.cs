@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
+using IJGZ20240903.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -32,8 +33,7 @@ namespace IJGZ20240903.Controllers
                 var authProperties = new AuthenticationProperties
                 {
                     // se puede configurar propiedades adicionales aquí
-                    //para que persista
-                    IsPersistent = true,
+                    
                 };
 
                 // Inicia sesión del usuario
@@ -47,7 +47,7 @@ namespace IJGZ20240903.Controllers
             else
             {
 
-                return Ok("Credenciales Incorrectas.");
+                return Unauthorized("Credenciales Incorrectas.");
 
             }
         }
